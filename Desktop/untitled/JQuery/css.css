@@ -1,0 +1,13 @@
+.result{
+    width:300px;
+    height:300px;
+    background:yellow;
+}
+.block{
+    width:30px;
+    height:30px;
+    background-color: red;
+    float: left;
+    margin:5px;
+    position: relative;
+}
