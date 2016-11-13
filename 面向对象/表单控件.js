@@ -12,18 +12,23 @@ function gspan(cobj) {
         }
     }
 }
-
 //页面加载完自动调用
 onload = regs;
 //一个函数，可以使用nosubmit调用，也可以用onload调用；
 function regs(click) {
     var stat = true;
+
+
     function regs() {//页面加载完找到表单元素
         var username = document.getElementsByName("username")[0];
         var password = document.getElementsByName("password")[0];
         var repass = document.getElementsByName("repass")[0];
         var email = document.getElementsByName("email")[0];
         var other = document.getElementsByName("other")[0];
+
+
+
+
         /*----------------------------------------
          通用检测方法
          第一个参数是obj,用来检查对象
@@ -31,7 +36,6 @@ function regs(click) {
          第三个参数fun,是个回调函数，用来检查值是否按条件输入
          第四个参数：click只是个状态，分清是单击提交还是失去焦点
          ----------------------------------------*/
-
         function
         check(obj, info, fun) {
             var sp = gspan(obj);
@@ -52,6 +56,7 @@ function regs(click) {
                 }
             }
         }
+
         //验证用户名栏
         check(username, "用户名的长度在3-20之间", function (val) {
             if (val.match(/^\s+$/) && val.length >= 3 &&
