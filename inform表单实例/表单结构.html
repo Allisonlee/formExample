@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>form表单实例/表单组件</title>
+    <style type="text/css">
+        .stats1 {
+            color: #aaa;
+        }
+        .stats2 {
+            color: #000;
+        }
+        .stats3 {
+            color: red;
+        }
+        .stats4 {
+            color: green;
+        }
+    </style>
+    <script src="表单控件.js"></script>
+</head>
+<body>
+
+<form action="reg.php" method="post" onsubmit="return
+regs()">
+    username: <input type="text" name="username" value=""/>
+    <span class="stats1">请输入用户名</span><br/>
+    password: <input type="password" name="password"
+                     value=""/>
+    <span class="stats1">请输入密码</span><br/>
+    repass: <input type="password" name="repass" value=""/>
+    <span class="stats1">请确认密码</span><br/>
+    email: <input type="email" name="email" value=""/>
+    <span class="stats1">请输入邮箱</span><br/>
+    other: <input type="text" name="other" value=""/>
+    <span class="stats1">请输入其他</span><br/>
+    submit: <input type="submit" name="sub" value="submit"/>
+</form>
+</body>
+</html>
