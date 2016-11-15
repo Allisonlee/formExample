@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>用while循环实现表格</title>
+</head>
+<body>
+<script type="text/javascript">
+    /*--------------------------------------------------
+    首先用js格式构建表格，表格样式，在表格框架中写内容：
+    A：申明变量，并赋值，用while语句遍历循环出语句
+        while（true）{文档写出，i++};
+    B:想换行，什么时候换行则用到条件if语句
+        if（true）{执行}；
+        可以嵌套if语句；
+    C：要用到鼠标触发一些行为,调用函数onmouseover="()"/onmouseout="()";
+        将函数单独写出来，在事件中调用；
+
+     -------------------------------------------------*/
+    document.write("<table border='1' width='800' align='center'>");
+
+    var i = 0;
+
+    while (i < 1000) {
+        if (i % 10 == 0) {
+            if (i % 20 == 0) {
+                bg = "#cccccc";
+            } else {
+                bg = "#ffffff";
+            }
+            document.write("<tr onmouseover='show(this)' onmouseout='noshow(this)' bgcolor='" + bg + "'>");
+        }
+        document.write("<td>" + i + "</td>");//输出一千个格子
+        i++;
+        if (i % 10 == 0) {
+            document.write("</tr>");
+        }
+    }
+    document.write("</table>");
+
+    var ys = null;
+    function show(obj) {
+        ys = obj.bgColor;
+        obj.bgColor = "red";
+    }
+
+    function noshow(obj) {
+        obj.bgColor = ys;
+    }
+</script>
+</body>
+</html>

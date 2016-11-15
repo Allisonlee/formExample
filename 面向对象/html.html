@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>表单验证</title>
+    <style type="text/css">
+        span{
+            font-size: 12px;
+        }
+        .stats1 {
+            color: #aaa;
+        }
+
+        .stats2 {
+            color: #000;
+        }
+
+        .stats3 {
+            color: red;
+        }
+
+        .stats4 {
+            color: green;
+        }
+    </style>
+    <script src="check.js"></script>
+</head>
+<body>
+<form action="reg.php" method="post"
+      onsubmit="return regs('click')">
+    username: <input type="text" name="username" value=""/>
+    <span class="stats1">请输入用户名</span><br/>
+    password: <input type="password" name="password"
+                     value=""/><span
+        class="stats1">请输入密码</span><br/>
+    repass: <input type="password" name="repass"
+                   value=""/><span
+        class="stats1">请确认密码</span><br/>
+    email: <input type="email" name="email" value=""/><span
+        class="stats1">请输入邮箱</span><br/>
+    其他: <input type="text" name="other"
+               value=""/><span
+        class="stats1">请输入其他</span><br/>
+    提交：<input type="submit"
+              name="submit"/>
+    <button>submit</button>
+
+
+</form>
+</body>
+</html>
