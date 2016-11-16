@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>IE和火狐兼容通过dom转换</title>
+    <style type="text/css">
+
+        /*将这个样式使用js加入元素类中使其改变样式*/
+        .test {
+            width: 500px;
+            height: 300px;
+            font-size: 4px;
+            border: 5px solid blue;
+            color: mediumvioletred;
+            background: yellowgreen;
+        }
+
+    </style>
+</head>
+<body>
+
+<a id="alink" href="#" target="_blank"
+   title="this is a test">test</a>
+
+<script type="text/javascript">
+
+    /*-------------------------------------------
+     A: ie:浏览器能显示innertext
+     B:火狐：浏览器能显示textcontent
+     C:用条件句来兼容该情况
+     D:简单点就直接用innerHTML都兼容
+
+
+     -------------------------------------------*/
+
+    var aobj = document.getElementById("alink");
+    aobj.href = "http://www.taobao.com";
+    aobj.target = "_slef";
+    aobj.title = "that's the way we like";
+    aobj.textContent = "Allison";
+    aobj.style.backgroundColor = "green";
+
+    //操作样式
+    aobj.style.fontSize = "3cm";
+    alert(aobj.offsetWidth);
+
+    aobj.className = "test";
+
+
+    ffie(aobj, "哈喽，我学到了dom章节来了");
+
+    function ffie(obj, value) {
+        /*
+         A：验证当下浏览器：是狐火还是IE
+         if(document.all){
+         alert("IE");
+         }else{
+         alert("火狐")；
+         }
+         */
+        if (document.all) {
+            if (typeof (value) == "undefined") {
+                return obj.innerText;
+            } else {
+                obj.innerText = value;
+            }
+        } else {
+            if (typeof (value) == "undefined") {
+                return obj.textContent;
+            } else {
+                obj.textContent = value;
+            }
+        }
+    }
+
+</script>
+</body>
+</html>
